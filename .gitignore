@@ -1,0 +1,13 @@
+.DS_Store
+*.pdf
+
+# ModelSim / Questa local output
+work/
+transcript
+vsim.wlf
+*.wlf
+*.vcd
+
+# Editor-local files
+.vscode/
+.idea/
