@@ -134,8 +134,7 @@ tristate_buf16
         .Dout(RF_DATA_IN)
     );
 
-// TODO assign statements needed to connect the modules
-// Instantiate the modules and connect them with wires
+// Datapath and control modules
 pc pc_ready(
     .rst_i(RESET),
     .clk_i(CLK),

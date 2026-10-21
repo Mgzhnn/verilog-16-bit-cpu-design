@@ -88,10 +88,8 @@ always @(*) begin
     // JMP set
     ////////////////////////////////////////////////////////////////////////////
     JMP = 1'b0;   // default value
-    /* TODO: write logic for JMP, you need to consider JAL and Jcond */
-    // For JAL, we always jump, so JMP should be 1 when opcode is MEM_OP and opcode_ex is JAL_OPex.
-    // For Jcond, we need to check the condition specified by Rdest and the PSR flags.
-    // The conditions are as follows:
+    // JAL always jumps. Jcond jumps when the condition in the Rdest field holds for the PSR
+    // flags (CR16 condition codes; the comments below name them by the flag test).
     if ((opcode == MEM_OP) && (opcode_ex == JAL_OPex)) begin
         JMP = 1'b1;
     end 
@@ -122,7 +120,7 @@ always @(*) begin
     // BR set
     ////////////////////////////////////////////////////////////////////////////
     BR = 1'b0;   // default value
-    /* TODO: write logic for BR, you need to consider Bcond */
+    // Bcond uses the same condition codes as Jcond
     if (opcode == Bcond_OP) begin
         case (Rdest)
             4'b0000: BR = psr_flags_i[0];  // EQ: Z

@@ -14,7 +14,6 @@ module instruction_reg
 );
 
 always @(posedge rst_i or posedge clk_i) begin
-    /* TODO: please write down logic for each output */
     // if reset, set all outputs to 0
     // if jump or branch, set inst_o to 0x0020, imm_o and displacement_o to 0x20, and addr_a_o and addr_b_o to 0
     // otherwise, set inst_o to inst_i, addr_a_o to bits [3:0] of inst_o, addr_b_o to bits [11:8] of inst_o, imm_o to bits [7:0] of inst_o, and displacement_o to bits [7:0] of inst_o

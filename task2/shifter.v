@@ -7,15 +7,7 @@ module shifter
 	output [15:0]   data_o
 );
 
-wire [30:0] stage_0;
-wire [22:0] stage_1;
-wire [18:0] stage_2;
-wire [16:0] stage_3;
-wire [15:0] stage_4;
-
-
-/* TODO: Please write down codes for each stage */
-// Define intermediate results on the way
+// Intermediate results of the right (r*) and left (l*) shift stages
 wire [15:0] r3, r2, r1, r0;
 wire [15:0] l3, l2, l1, l0;
 wire [15:0] result;

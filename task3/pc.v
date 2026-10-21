@@ -34,11 +34,12 @@ cla16
         .sum_o(next_addr_imem_w)
     );
 
-/* TODO: please write down logic for curr_addr_imem */
 // Here we have three cases for the next value of curr_addr_imem:
 // 1. If rst_i is high, we reset the instruction pointer to 0.
 // 2. If jump_i is high, we set the instruction pointer to the jump target.
 // 3. Otherwise, we increment the instruction pointer by 1 or by the displacement (if branch_i is high).
+//    The branch executes while the next instruction is being fetched, so curr_addr_imem
+//    already points past the branch: the target is branch address + 1 + displacement.
 // 3rd case calculated inside the cla16 module, so we just need to assign the output of the cla16 to curr_addr_imem in the else case.
 always @(posedge clk_i or posedge rst_i) begin
     if (rst_i) begin
