@@ -20,9 +20,10 @@ reg [15:0] reg5_r;
 reg [15:0] reg6_r;
 reg [15:0] reg7_r;
    
-// TODO : implement the register file which has 8 registers and each register is 16-bit wide.
-// Write data to the register file when wr_i is 1. The address of the register to write is given by addr_b_i.
-// Read data from the register file when wr_i is 0. The address of the register to read is given by addr_a_i and addr_b_i, and the read data should be output to data_a_o and data_b_o, respectively.
+// 8 registers, 16 bits each. When wr_i is 1, data_i is written on the clock edge to the
+// register addressed by addr_b_i. Both read ports are combinational and always active:
+// data_a_o follows addr_a_i and data_b_o follows addr_b_i.
+// Only address bits [2:0] are used, so r8..r15 in an instruction map onto r0..r7.
 always @(posedge rst_i or posedge clk_i) begin
     if (rst_i == 1'b1) begin
         reg0_r <= 16'h0;

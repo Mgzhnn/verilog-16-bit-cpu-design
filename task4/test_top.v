@@ -43,10 +43,10 @@ block_ram #(
 ) u_imem(
     .clk_i(CLK),
     .rst_i(RESET),
-    .wr_i(),
+    .wr_i(1'b0),
 
     .addr_i(IMEM_ADDRESS),
-    .wdata_i(),
+    .wdata_i(16'h0000),
 
     .rdata_o(IMEM_DATA)
 );

@@ -38,7 +38,7 @@ initial begin
     /* 
      * Initialize RF 
      * Small tips for understanding condition: 
-     * 1. (addrB<4'b0100) is equivalent with 'if(addrB==4'b0110) break;'
+     * 1. (addrB<4'b0110) is equivalent with 'if(addrB==4'b0110) break;'
      * placed after loop statements by compiler
      * 2. addrB will be checked with old value @ posedge of clk due to
      * non-blocking assignment
