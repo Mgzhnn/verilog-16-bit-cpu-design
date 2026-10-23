@@ -18,6 +18,7 @@ This project implements the main datapath and control blocks for a simple 16-bit
 
 ```text
 .
+|-- .github/workflows/ci.yml
 |-- task1/
 |   |-- register_file.v
 |   `-- test_register_file.v
@@ -37,20 +38,21 @@ This project implements the main datapath and control blocks for a simple 16-bit
 |   |-- pc.v
 |   |-- opcodes.vh
 |   `-- test_fetch.v
-`-- task4/
+|-- task4/
     |-- top_processor.v
     |-- block_ram.v
     |-- mux16_2to1.v
     |-- mux5_2to1.v
     |-- tristate_buf16.v
     |-- imem_img
-    |-- dmem_img
     `-- test_top.v
-`-- tests/
+|-- tests/
     |-- run_tests.sh
     |-- cpu_harness.v
     |-- control_imem
     `-- tb_*_check.v
+|-- LICENSE
+`-- README.md
 ```
 
 ## Main Modules
