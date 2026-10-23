@@ -39,18 +39,18 @@ This project implements the main datapath and control blocks for a simple 16-bit
 |   |-- opcodes.vh
 |   `-- test_fetch.v
 |-- task4/
-    |-- top_processor.v
-    |-- block_ram.v
-    |-- mux16_2to1.v
-    |-- mux5_2to1.v
-    |-- tristate_buf16.v
-    |-- imem_img
-    `-- test_top.v
+|   |-- top_processor.v
+|   |-- block_ram.v
+|   |-- mux16_2to1.v
+|   |-- mux5_2to1.v
+|   |-- tristate_buf16.v
+|   |-- imem_img
+|   `-- test_top.v
 |-- tests/
-    |-- run_tests.sh
-    |-- cpu_harness.v
-    |-- control_imem
-    `-- tb_*_check.v
+|   |-- run_tests.sh
+|   |-- cpu_harness.v
+|   |-- control_imem
+|   `-- tb_*_check.v
 |-- LICENSE
 `-- README.md
 ```
