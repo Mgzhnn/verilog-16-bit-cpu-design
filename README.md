@@ -18,6 +18,7 @@ This project implements the main datapath and control blocks for a simple 16-bit
 
 ```text
 .
+|-- .github/workflows/ci.yml
 |-- task1/
 |   |-- register_file.v
 |   `-- test_register_file.v
@@ -37,20 +38,21 @@ This project implements the main datapath and control blocks for a simple 16-bit
 |   |-- pc.v
 |   |-- opcodes.vh
 |   `-- test_fetch.v
-`-- task4/
-    |-- top_processor.v
-    |-- block_ram.v
-    |-- mux16_2to1.v
-    |-- mux5_2to1.v
-    |-- tristate_buf16.v
-    |-- imem_img
-    |-- dmem_img
-    `-- test_top.v
-`-- tests/
-    |-- run_tests.sh
-    |-- cpu_harness.v
-    |-- control_imem
-    `-- tb_*_check.v
+|-- task4/
+|   |-- top_processor.v
+|   |-- block_ram.v
+|   |-- mux16_2to1.v
+|   |-- mux5_2to1.v
+|   |-- tristate_buf16.v
+|   |-- imem_img
+|   `-- test_top.v
+|-- tests/
+|   |-- run_tests.sh
+|   |-- cpu_harness.v
+|   |-- control_imem
+|   `-- tb_*_check.v
+|-- LICENSE
+`-- README.md
 ```
 
 ## Main Modules
@@ -108,7 +110,7 @@ tests/run_tests.sh
 | `tb_cpu_program_check` | Runs `task4/imem_img` and checks data memory and registers |
 | `tb_cpu_control_check` | Runs `tests/control_imem`: taken and not-taken branches, JAL, flush NOPs |
 
-The script exits with status 1 if any test fails. Set `IVERILOG` and `VVP` to use binaries that are not on `PATH`.
+The script exits with status 1 if any test fails. Set `IVERILOG` and `VVP` to use binaries that are not on `PATH`. The same script runs in GitHub Actions (`.github/workflows/ci.yml`) on every push and pull request.
 
 ## Design Notes
 
@@ -154,3 +156,7 @@ Do not compile the `.vh` files as standalone Verilog files. They are header file
 ## Author
 
 Magzhan Ziyabek
+
+## License
+
+[MIT](LICENSE)
